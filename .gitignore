@@ -1,5 +1,8 @@
 # Object file
 *.o
+**/out
 
-# Ada Library Information
-*.ali
+# Intellij
+**/.idea
+**/*.iml
+**/*.eml
