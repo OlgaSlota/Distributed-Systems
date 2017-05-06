@@ -6,3 +6,5 @@ Several Java applications for distributed communication problems
 2. Chat implementation based on group communication mechanisms provided by JGroups toolkit.
 
 3. RabbitMQ communication between hospital emloyees. Implementation with channels and exchanges.
+
+4. gRPC based implementation of hospital communication beetwen patients, doctors and labolatory employees. Remote Procedure Call approach.
