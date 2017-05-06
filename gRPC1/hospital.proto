@@ -1,0 +1,41 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "sr.grpc.gen";
+option java_outer_classname = "HospitalProto";
+option objc_class_prefix = "HLW";
+
+
+message ShowPatientArgument {
+    string pesel =1;
+}
+
+message PatientRecord {
+    string name = 1;
+    string pesel = 2;
+    string address = 3;
+    string doctor = 4;
+    repeated string paramName = 5;
+    repeated double paramValue = 6;
+    repeated string paramUnit = 7;
+}
+
+message SavePatientResult {
+    int32 status = 1;
+}
+
+message DateArgument {
+    string date = 1;
+}
+
+message ParameterArgument {
+    string parameterName = 1;
+    double parameterValue = 2;
+}
+
+service Hospital {
+    rpc ShowPatientCard (ShowPatientArgument) returns (PatientRecord) {}
+    rpc SavePatientResults (PatientRecord) returns (SavePatientResult) {}
+    rpc ShowResultsByDate (DateArgument) returns (stream PatientRecord) {}
+    rpc ShowResultsByParam (ParameterArgument) returns (stream PatientRecord) {}
+}
